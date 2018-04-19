@@ -64,7 +64,7 @@ module.exports = {
             { from: './src/index.html' },
             { from: './src/main.css' },
             { from: './src/data', to: 'data' },
-            { from: './src/img', to: 'img' }
+            // { from: './src/img', to: 'img' }
         ])
     ],
     devServer: {

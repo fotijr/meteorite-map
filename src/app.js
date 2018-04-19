@@ -4,14 +4,15 @@ import * as topojson from "topojson-client";
 export default function (mapElementSelector) {
 
     var margin = { top: 0, right: 0, bottom: 0, left: 0 },
-        width = 576 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom,
+        width = screen.width - margin.left - margin.right,
+        height =  screen.height - 300 - margin.top - margin.bottom,
         meteoriteLandings, meteorTimer;
 
     var color = d3.scaleThreshold()
         .domain([10000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1500000000])
         .range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "rgb(3,19,43)"]);
 
+    console.log(width,height);
     var svg = d3.select("body")
         .append("svg")
         .attr("width", width)
@@ -22,7 +23,7 @@ export default function (mapElementSelector) {
     //geoOrthographic()
     //geoMercator()
     var projection = d3.geoEquirectangular()
-        .scale(80)
+        .scale(200)
         .translate([width / 2, height / 2]);
 
     var path = d3.geoPath().projection(projection);
@@ -36,7 +37,7 @@ export default function (mapElementSelector) {
         var projectionType = option.currentTarget.value;
 
         projection = d3[projectionType]()
-            .scale(80)
+            .scale(100)
             .translate([width / 2, height / 2]);
 
         path = d3.geoPath().projection(projection);
