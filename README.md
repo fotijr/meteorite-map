@@ -1,7 +1,4 @@
 # Meteorite Map
-Building a map of meteorite strikes to learn D3.
+A D3 map showing known meteorite landings, with time playback functionality.
 
-## Local Development
-1. Clone the repo.
-2. Run `yarn` to install the dependencies.
-3. Run `yarn dev` to start the dev server (with hot reloading).
+Data source: [NASA](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh)
