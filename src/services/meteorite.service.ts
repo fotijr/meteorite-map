@@ -6,7 +6,7 @@ import {
 
 export async function getMeteoriteLandings(): Promise<MeteoriteLanding[]> {
   const results = await axios.get<UnprocessedMeteoriteLanding[]>(
-    'https://data.nasa.gov/resource/y77d-th95.json'
+    '/meteorite-landings.json'
   );
   const landings =  results.data.map((m) => ({
     ...m,
