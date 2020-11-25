@@ -1,5 +1,9 @@
 <template>
-  <div class="flex px-2 py-2 mb-4 border-double border-b-4">
+  <div class="flex py-2 mb-4 border-double border-b-4">
+    <div class="mr-3 text-gray-600 text-center uppercase border-r-2 px-2 font-bold pt-1">
+      <h1 class="">Meteorite</h1>
+      <h1 class="uppercase tracking-widest">Map</h1>
+    </div>
     <div class="mr-4">
       <mm-label text="Playback">
         <button
@@ -36,6 +40,10 @@
           v-on:change="sliderChanged"
         />
       </mm-label>
+      <div class="flex text-gray-500 text-xs -mt-2 font-thin">
+        <div class="mr-auto">{{ years.min }}</div>
+        <div class="ml-auto">{{ years.max }}</div>
+      </div>
     </div>
     <div class="mr-6">
       <mm-label text="Landings shown through year">
@@ -63,6 +71,10 @@
           <font-awesome-icon icon="globe-africa" />
         </button>
       </mm-label>
+    </div>
+    <div class="ml-auto mr-2 text-right text-sm">
+      <a class="p-1 hover:underline block" href="https://github.com/fotijr/meteorite-map">GitHub</a>
+      <a class="p-1 hover:underline block" href="https://fotijr.com">fotijr.com</a>
     </div>
   </div>
   <svg
